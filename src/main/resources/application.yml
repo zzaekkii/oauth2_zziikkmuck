@@ -1,13 +1,25 @@
 spring:
 
-  # DB
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${DB_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+#  # DB
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: ${DB_URL}
+#    username: ${DB_USERNAME}
+#    password: ${DB_PASSWORD}
 
   # JPA
   jpa:
     hibernate:
       ddl-auto: none
+
+  # Security
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: ${CLIENT_ID}
+            client-secret : ${CLIENT_SECRET}
+            scope:
+              - read:user
+#              - user:follow
